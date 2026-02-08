@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Call Safety Guide</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" />
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            color: #333;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f4f7f9;
+        }
+
+        .container { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            text-align: center;
+        }
+
+        header {
+            margin-bottom: 40px;
+        }
+
+        /* This creates the side-by-side layout */
+        .flex-row {
+            display: flex;
+            gap: 20px;
+            text-align: left;
+            align-items: stretch;
+        }
+
+        .box {
+            flex: 1; /* Makes both boxes equal width */
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            background: white;
+        }
+
+        .warning-box { border-top: 6px solid #ff5c5c; }
+        .action-box { border-top: 6px solid #2874de; }
+
+        h1 { font-size: 2.5rem; margin-bottom: 0; }
+        h2 { font-size: 1.2rem; margin-top: 0; text-transform: uppercase; letter-spacing: 1px; }
+        
+        ul { padding-left: 20px; margin-bottom: 0; }
+        li { margin-bottom: 12px; }
+
+        /* Responsive: Stacks them on top of each other on small screens */
+        @media (max-width: 600px) {
+            .flex-row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+            <h1>Phone Call</h1>
+            <p>In a phone call right now?</p>
+        <div class="flex-row">
+            <section class="box warning-box">
+                <h2>WARNINGS</h2>
+                <ul>
+                    <li>Unknown Number</li>
+                    <li>Demands or Threats</li>
+                    <li>Reluctance to answer questions</li>
+                    <li>Artificial/robot voice</li>
+                </ul>
+            </section>
+
+            <section class="box action-box">
+                <h2>WHAT TO DO</h2>
+                <ul>
+                    <li>Answer Cautiously</li>
+                    <li>Hang up immediately</li>
+                    <li>Kindly decline requests</li>
+                    <li>Verify the caller's identity</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+</body>
+</html>
