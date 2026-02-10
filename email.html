@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Email Check - ElderGuard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="./index.css" />
+    <style>
+        .input-area { width: 90%; max-width: 500px; padding: 15px; border: 2px solid #1a1a1a; border-radius: 8px; font-size: 1.1rem; margin-bottom: 20px; }
+        #email-result { display: none; margin-top: 20px; padding: 20px; border-radius: 12px; max-width: 500px; width: 90%; text-align: center; border: 2px solid #1a1a1a; }
+        .warning-text { color: #dc2626; font-weight: 700; font-size: 1.2rem; }
+        .safe-text { color: #16a34a; font-weight: 700; font-size: 1.2rem; }
+    </style>
+</head>
+<body>
+    <header class="home-container10">
+        <div class="home-container11" onclick="location.href='index.html'" style="cursor:pointer">
+            <img src="assets/logo.svg" alt="Logo" class="home-logo" />
+            <h1 class="home-text1">ElderGuard</h1>
+        </div>
+    </header>
+
+    <main class="home-container12">
+        <h1 class="home-text2">Sender Verification</h1>
+        <p class="home-text3">Type in the <b>email address</b> of the person who messaged you:</p>
+
+        <input type="email" id="emailInput" class="input-area" placeholder="example@gmail.com">
+        
+        <button type="button" class="button" onclick="checkEmailDomain()">Check Sender</button>
+
+        <div id="email-result">
+            <p id="resultHeadline"></p>
+            <p id="resultDetails" style="margin-top: 10px; line-height: 1.4;"></p>
+            <br>
+            <button class="button" onclick="location.href='index.html'">Go Back</button>
+        </div>
+    </main>
+
+    <script>
+        function checkEmailDomain() {
+            const email = document.getElementById('emailInput').value.toLowerCase().trim();
+            const resultDiv = document.getElementById('email-result');
+            const headline = document.getElementById('resultHeadline');
+            const details = document.getElementById('resultDetails');
+
+            // Basic email validation
+            if (!email.includes('@')) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            // The "Blacklist" of public/personal domains
+            const publicDomains = [
+                'gmail.com', 'outlook.com', 'hotmail.com', 'yahoo.com', 
+                'icloud.com', 'aol.com', 'msn.com', 'live.com', 'protonmail.com'
+            ];
+
+            // Extract the domain (everything after the @)
+            const domain = email.split('@')[1];
+            
+            let isPublic = false;
+
+            // The Loop: Checking if the domain is in our list
+            for (let i = 0; i < publicDomains.length; i++) {
+                if (domain === publicDomains[i]) {
+                    isPublic = true;
+                    break;
+                }
+            }
+
+            resultDiv.style.display = 'block';
+
+            if (isPublic) {
+                // High Contrast Warning
+                resultDiv.style.backgroundColor = '#fee2e2'; // Light Red
+                headline.className = 'warning-text';
+                headline.innerText = "⚠️ CAUTION: Personal Account";
+                details.innerText = `This email is from a free provider (${domain}). Official companies (like Banks or Amazon) almost never use Gmail or Yahoo to contact customers.`;
+            } else {
+                // Professional Green
+                resultDiv.style.backgroundColor = '#f0fdf4'; // Light Green
+                headline.className = 'safe-text';
+                headline.innerText = "✅ Official Domain Detected";
+                details.innerText = `This email is from "@${domain}". While this looks more professional, still be careful if the message asks for money or passwords.`;
+            }
+            
+            resultDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

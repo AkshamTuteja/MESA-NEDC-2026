@@ -1,179 +1,109 @@
+/* --- Header & Branding --- */
 .home-container10 {
   width: 100%;
   display: flex;
-  min-height: 100vh;
-  align-items: center;
   flex-direction: column;
-  background-color: #48A860;
+  align-items: center;
+  justify-content: center;
+  background-color: #2D6A4F; /* Deep green */
+  padding: 40px 0;
+  min-height: auto;
 }
- 
+
 .home-container11 {
-  flex: 0 0 auto;
   display: flex;
-  align-items: flex-start;
+  flex-direction: column; /* Stack logo on top of text */
+  align-items: center;
+  justify-content: center;
+  gap: 15px; /* Space between logo and text */
 }
- 
+
+.home-logo {
+  width: 400px;  /* Professional size */
+  /* height: 80px;*/
+  object-fit: contain;
+  display: block;
+}
+
 .home-text1 {
-  color: rgb(0, 0, 0);
-  background-clip: text;
-  webkit-background-clip: text;
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
 }
- 
+
+/* --- Main Content Section --- */
 .home-container12 {
   width: 100%;
   display: flex;
-  min-height: 100vh;
+  min-height: 70vh;
   align-items: center;
   flex-direction: column;
   background-color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
 }
- 
-.home-container13 {
-  flex: 0 0 auto;
-  width: 200px;
-  border: 2px dashed rgba(120, 120, 120, 0.4);
-  height: 100px;
-  display: flex;
-  align-items: flex-start;
-}
- 
-.home-container14 {
-  flex: 0 0 auto;
-  width: 100%;
-  border: 2px dashed rgba(120, 120, 120, 0.4);
-  height: 100px;
-  display: flex;
-  align-items: flex-start;
-}
- 
+
 .home-text2 {
-  color: rgb(0, 0, 0);
-  background-clip: text;
-  webkit-background-clip: text;
+  color: #1a1a1a;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
- 
+
 .home-text3 {
-  color: #000000;
+  color: #4a4a4a;
+  font-size: 1.2rem;
+  margin-bottom: 40px;
 }
- 
-.home-container15 {
-  width: 100%;
-  border: 2px dashed rgba(120, 120, 120, 0.4);
-  height: 34px;
-  display: flex;
-  align-items: flex-start;
-  gap: 10px; /* Added spacing */
-}
- 
+
+/* --- Buttons --- */
 .home-container16 {
-  flex: 0 0 auto;
-  width: auto;
-  height: auto;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  gap: 10px; /* Added spacing */
+  gap: 20px;
+  flex-wrap: wrap;
 }
- 
-.home-button1 {
+
+.button {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  padding: 18px 35px;
+  border-radius: 12px;
+  border: 2px solid #1a1a1a; /* High contrast border */
+  background-color: #ffffff;
+  color: #1a1a1a;
   font-weight: 700;
-  margin: 0 5px; /* Added tiny bit of margin */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Inter', sans-serif;
 }
- 
-.home-container17 {
-  flex: 0 0 auto;
-  width: 68px;
-  border: 2px dashed rgba(120, 120, 120, 0.4);
-  height: 100px;
-  display: flex;
-  align-items: flex-start;
+
+.button:hover {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
- 
-.home-container18, 
-.home-container19, 
-.home-container20, 
-.home-container21, 
-.home-container22, 
-.home-container23 {
-  flex: 0 0 auto;
-  width: auto;
-  height: auto;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 10px; /* Added spacing to all button containers */
-}
- 
-.home-button2 {
-  font-weight: 700;
-  margin: 0 5px; /* Added tiny bit of margin */
-}
- 
-.home-container24 {
-  flex: 0 0 auto;
-  width: 68px;
-  border: 2px dashed rgba(120, 120, 120, 0.4);
-  height: 100px;
-  display: flex;
-  align-items: flex-start;
-}
- 
-.home-button3 {
-  font-weight: 700;
-  margin: 0 5px; /* Added tiny bit of margin */
-}
- 
-.home-container25 {
-  flex: 0 0 auto;
-  width: 100%;
-  border: 2px dashed rgba(120, 120, 120, 0.4);
-  height: 100px;
-  display: flex;
-  align-items: flex-start;
-}
- 
-.home-container26 {
-  flex: 0 0 auto;
-  width: 100%;
-  border: 2px dashed rgba(120, 120, 120, 0.4);
-  height: 100px;
-  display: flex;
-  align-items: flex-start;
-}
- 
-.home-link {
-  display: contents;
-}
- 
+
+/* --- Floating Footer Badge --- */
 .home-container27 {
-  right: 50px;
-  border: 1px solid #ffffff5c;
+  right: 40px;
   bottom: 30px;
   display: flex;
-  z-index: 22;
   position: fixed;
-  box-shadow: 5px 5px 10px 0px rgba(31, 31, 31, 0.4);
-  min-height: auto;
+  z-index: 22;
   align-items: center;
-  padding-top: 8px;
-  padding-left: 12px;
-  border-radius: 8px;
-  padding-right: 12px;
-  padding-bottom: 8px;
-  backdrop-filter: blur(6px);
-  background-color: rgba(41, 41, 41, 0.41);
-  gap: 8px; /* Added spacing for the fixed footer icons/text */
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background-color: #1a1a1a;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  gap: 10px;
 }
- 
-.home-icon1 {
-  width: 24px;
-  margin-right: 4px;
-}
- 
+
 .home-text4 {
   color: white;
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px;
+  font-size: 14px;
+  font-weight: 600;
 }
