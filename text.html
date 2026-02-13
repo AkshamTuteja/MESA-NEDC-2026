@@ -5,96 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" />
     <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./text.css" />
+    
     <script src="https://js.puter.com/v2/"></script>
-    <style>
-        .input-area { width: 90%; max-width: 600px; padding: 20px; border: 2px solid #1a1a1a; border-radius: 12px; font-size: 1rem; min-height: 150px; margin-bottom: 20px; }
-        #result-container { display: none; margin-top: 30px; padding: 25px; border-radius: 12px; max-width: 600px; width: 90%; text-align: center; }
-        .score-number { font-size: 3.5rem; font-weight: 900; display: block; margin: 10px 0; }
-        .loading-spinner { display: none; margin: 20px; font-weight: bold; color: #2D6A4F; }
-        .danger-box { border: 3px solid #1a1a1a; }
-    </style>
 </head>
 <body>
     <header class="home-container10">
-        <div class="home-container11" onclick="location.href='index.html'" style="cursor:pointer">
+        <a href="index.html" class="home-container11 header-link">
             <img src="assets/logo.svg" alt="Logo" class="home-logo" />
             <h1 class="home-text1">ElderGuard</h1>
-        </div>
+        </a>
     </header>
 
-    <main class="home-container12">
-        <h1 class="home-text2">AI Message Scan</h1>
-        <p class="home-text3">Paste the suspicious message below for AI evaluation.</p>
+<main class="home-container12">
+    <h1 class="home-text2" style="font-size: 3rem;">AI Message Scan</h1> <p class="home-text3" style="font-size: 1.5rem; max-width: 600px;">Paste the suspicious message below for AI evaluation.</p>
 
-        <textarea id="userInput" class="input-area" placeholder="e.g. 'Your Netflix account is locked, click here to update billing...'"></textarea>
-        
-        <button type="button" id="scanBtn" class="button" onclick="analyzeWithAI()">SCAN MESSAGE</button>
-        
-        <div id="loading" class="loading-spinner">AI is analyzing patterns...</div>
+    <textarea id="userInput" class="input-area" placeholder="e.g. 'Your Netflix account is locked...'"></textarea>
+    
+    <button type="button" id="scanBtn" onclick="analyzeWithAI()">SCAN MESSAGE</button>
+    
+    <div id="loading" class="loading-spinner">Analyzing for scams...</div>
 
-        <div id="result-container" class="danger-box">
-            <span class="home-text3" id="statusLabel">Evaluation Score:</span>
-            <span id="scoreDisplay" class="score-number">--</span>
-            <p id="feedbackText" style="font-weight: 500; line-height: 1.5;"></p>
-            <br>
-            <button class="button" onclick="location.href='index.html'">Done</button>
-        </div>
-    </main>
-
-    <script>
-        async function analyzeWithAI() {
-            const text = document.getElementById('userInput').value;
-            const btn = document.getElementById('scanBtn');
-            const loading = document.getElementById('loading');
-            const resultDiv = document.getElementById('result-container');
-
-            if (!text.trim() || text.length < 10) {
-                alert("Please paste a full message to get an accurate scan.");
-                return;
-            }
-
-            // UI Feedback
-            btn.style.display = 'none';
-            loading.style.display = 'block';
-            resultDiv.style.display = 'none';
-
-            try {
-                // 2. Call the AI Model (Gemini-style via Puter)
-                // We ask it to return a JSON-like response for easy parsing
-                const prompt = `Analyze this message for scam potential: "${text}". 
-                Respond ONLY in this format: Score: [0-100], Reason: [1 sentence warning]`;
-                
-                const response = await puter.ai.chat(prompt);
-                const content = response.message.content;
-
-                // 3. Parse the AI response (Simple regex to find the number)
-                const scoreMatch = content.match(/Score:\s*(\d+)/i);
-                const score = scoreMatch ? parseInt(scoreMatch[1]) : 50;
-                const reason = content.split('Reason:')[1] || "Suspicious patterns detected.";
-
-                // 4. Update UI based on score
-                loading.style.display = 'none';
-                resultDiv.style.display = 'block';
-                document.getElementById('scoreDisplay').innerText = score + '%';
-                document.getElementById('feedbackText').innerText = reason;
-
-                if (score >= 60) {
-                    resultDiv.style.backgroundColor = '#fee2e2'; // Light Red
-                    resultDiv.style.borderColor = '#dc2626';
-                    document.getElementById('statusLabel').innerText = "HIGH RISK DETECTED";
-                } else {
-                    resultDiv.style.backgroundColor = '#f0fdf4'; // Light Green
-                    resultDiv.style.borderColor = '#16a34a';
-                    document.getElementById('statusLabel').innerText = "MESSAGE APPEARS SAFE";
-                }
-
-            } catch (error) {
-                console.error(error);
-                alert("AI service is busy. Please try again in a moment.");
-                btn.style.display = 'block';
-                loading.style.display = 'none';
-            }
-        }
-    </script>
+    <div id="result-container" class="danger-box">
+        <span class="home-text3" id="statusLabel" style="font-size: 1.5rem; font-weight: bold;">Risk Level:</span>
+        <span id="scoreDisplay" class="score-number">--</span>
+        <p id="feedbackText"></p>
+        <br>
+        <a href="index.html" class="button-link" style="padding: 15px 40px; font-size: 1.2rem;">Back to Home</a>
+    </div>
+</main>
+    <script src="text.js"></script>
 </body>
 </html>

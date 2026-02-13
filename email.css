@@ -1,0 +1,93 @@
+/* --- Email Verification Styles --- */
+
+/* Larger input for easier typing */
+.input-area { 
+    width: 90%; 
+    max-width: 600px; 
+    padding: 20px; 
+    border: 3px solid #1a1a1a; 
+    border-radius: 12px; 
+    font-size: 1.4rem; 
+    margin-bottom: 25px; 
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box; /* Prevents width issues */
+}
+
+/* Enhanced Visibility Check Sender Button */
+#scanBtn {
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    padding: 25px 50px; 
+    border-radius: 15px;
+    border: none;
+    background-color: #2D6A4F; /* Your branding Deep Green */
+    color: #ffffff;
+    font-size: 1.5rem; 
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: 90%;
+    max-width: 600px;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 8px 20px rgba(45, 106, 79, 0.3);
+}
+
+#scanBtn:hover {
+    background-color: #1b4332; 
+    transform: scale(1.02); 
+    box-shadow: 0 10px 25px rgba(45, 106, 79, 0.4);
+}
+
+/* Clear focus state for accessibility */
+#scanBtn:focus {
+    outline: 4px solid #48A860;
+    outline-offset: 4px;
+}
+
+/* Results Container */
+#email-result { 
+    display: none; 
+    margin-top: 30px; 
+    padding: 30px; 
+    border-radius: 15px; 
+    max-width: 600px; 
+    width: 90%; 
+    text-align: center; 
+    border: 4px solid #1a1a1a;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* High-Contrast Result Text */
+.warning-text { 
+    color: #b91c1c; 
+    font-weight: 800; 
+    font-size: 1.8rem; 
+    display: block;
+    margin-bottom: 10px;
+}
+
+.safe-text { 
+    color: #15803d; 
+    font-weight: 800; 
+    font-size: 1.8rem; 
+    display: block;
+    margin-bottom: 10px;
+}
+
+#resultDetails {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #1a1a1a;
+    font-weight: 500;
+}
+
+/* Back button consistency */
+.button-link {
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}

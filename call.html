@@ -3,90 +3,52 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Phone Call Safety Guide</title>
+    <title>Phone Call Safety - ElderGuard</title>
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" />
-
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.5;
-            color: #333;
-            margin: 0;
-            padding: 40px 20px;
-            background-color: #f4f7f9;
-        }
-
-        .container { 
-            max-width: 900px; 
-            margin: 0 auto; 
-            text-align: center;
-        }
-
-        header {
-            margin-bottom: 40px;
-        }
-
-        /* This creates the side-by-side layout */
-        .flex-row {
-            display: flex;
-            gap: 20px;
-            text-align: left;
-            align-items: stretch;
-        }
-
-        .box {
-            flex: 1; /* Makes both boxes equal width */
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            background: white;
-        }
-
-        .warning-box { border-top: 6px solid #ff5c5c; }
-        .action-box { border-top: 6px solid #2874de; }
-
-        h1 { font-size: 2.5rem; margin-bottom: 0; }
-        h2 { font-size: 1.2rem; margin-top: 0; text-transform: uppercase; letter-spacing: 1px; }
-        
-        ul { padding-left: 20px; margin-bottom: 0; }
-        li { margin-bottom: 12px; }
-
-        /* Responsive: Stacks them on top of each other on small screens */
-        @media (max-width: 600px) {
-            .flex-row {
-                flex-direction: column;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./call.css" />
 </head>
 <body>
 
-    <div class="container">
-            <h1>Phone Call</h1>
-            <p>In a phone call right now?</p>
-        <div class="flex-row">
-            <section class="box warning-box">
-                <h2>WARNINGS</h2>
-                <ul>
-                    <li>Unknown Number</li>
-                    <li>Demands or Threats</li>
-                    <li>Reluctance to answer questions</li>
-                    <li>Artificial/robot voice</li>
-                </ul>
-            </section>
+    <header class="home-container10">
+        <a href="index.html" class="home-container11" style="text-decoration: none;">
+            <img src="assets/logo.svg" alt="Logo" class="home-logo" />
+            <h1 class="home-text1">ElderGuard</h1>
+        </a>
+    </header>
 
-            <section class="box action-box">
-                <h2>WHAT TO DO</h2>
-                <ul>
-                    <li>Answer Cautiously</li>
-                    <li>Hang up immediately</li>
-                    <li>Kindly decline requests</li>
-                    <li>Verify the caller's identity</li>
-                </ul>
-            </section>
+    <main class="home-container12">
+        <div class="container">
+            <h1 class="home-text2" style="font-size: 3rem;">Phone Call Guide</h1>
+            <p class="home-text3" style="font-size: 1.5rem;">In a suspicious call right now? Follow these steps:</p>
+            
+            <div class="flex-row">
+                <section class="box warning-box">
+                    <h2>RED FLAGS</h2>
+                    <ul>
+                        <li>Unknown Number</li>
+                        <li>Demands or Threats</li>
+                        <li>Asking for Gift Cards</li>
+                        <li>Artificial/Robot Voice</li>
+                    </ul>
+                </section>
+
+                <section class="box action-box">
+                    <h2>WHAT TO DO</h2>
+                    <ul>
+                        <li>Stay Calm</li>
+                        <li>Hang up immediately</li>
+                        <li>Do not say "Yes"</li>
+                        <li>Call a trusted family member</li>
+                    </ul>
+                </section>
+            </div>
+
+            <br><br>
+            <a href="index.html" class="button-link" style="padding: 15px 40px; font-size: 1.2rem;">Back to Home</a>
         </div>
-    </div>
+    </main>
 
 </body>
 </html>

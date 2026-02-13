@@ -1,0 +1,57 @@
+/* --- Phone Call Guide Styles --- */
+
+.container { 
+    max-width: 900px; 
+    margin: 0 auto; 
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+/* Side-by-side layout */
+.flex-row {
+    display: flex;
+    gap: 25px;
+    text-align: left;
+    align-items: stretch;
+    margin-top: 30px;
+}
+
+.box {
+    flex: 1; 
+    padding: 30px;
+    border-radius: 15px;
+    background: white;
+    border: 3px solid #1a1a1a; /* High contrast border */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+/* Distinctive colored tops for quick visual cues */
+.warning-box { border-top: 12px solid #b91c1c; } /* Deep Red */
+.action-box { border-top: 12px solid #2D6A4F; }  /* ElderGuard Green */
+
+.box h2 { 
+    font-size: 1.6rem; 
+    margin-top: 0; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    color: #1a1a1a;
+}
+
+.box ul { 
+    padding-left: 20px; 
+    margin-bottom: 0; 
+}
+
+.box li { 
+    margin-bottom: 18px; 
+    font-size: 1.4rem; /* Senior-friendly font size */
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* Stack boxes on mobile */
+@media (max-width: 768px) {
+    .flex-row {
+        flex-direction: column;
+    }
+}

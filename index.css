@@ -1,3 +1,9 @@
+/* --- Global Styles --- */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
 /* --- Header & Branding --- */
 .home-container10 {
   width: 100%;
@@ -7,20 +13,18 @@
   justify-content: center;
   background-color: #2D6A4F; /* Deep green */
   padding: 40px 0;
-  min-height: auto;
 }
 
 .home-container11 {
   display: flex;
-  flex-direction: column; /* Stack logo on top of text */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 15px; /* Space between logo and text */
+  gap: 15px;
 }
 
 .home-logo {
-  width: 400px;  /* Professional size */
-  /* height: 80px;*/
+  width: 400px;
   object-fit: contain;
   display: block;
 }
@@ -42,6 +46,7 @@
   background-color: #ffffff;
   padding: 60px 20px;
   text-align: center;
+  box-sizing: border-box; /* Ensures padding doesn't break width */
 }
 
 .home-text2 {
@@ -56,7 +61,7 @@
   margin-bottom: 40px;
 }
 
-/* --- Buttons --- */
+/* --- Navigation Buttons (The updated anchor links) --- */
 .home-container16 {
   display: flex;
   align-items: center;
@@ -65,21 +70,23 @@
   flex-wrap: wrap;
 }
 
-.button {
+/* Changed .button to .button-link to match our new HTML */
+.button-link {
+  text-decoration: none; /* Removes the underline from links */
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   padding: 18px 35px;
   border-radius: 12px;
-  border: 2px solid #1a1a1a; /* High contrast border */
+  border: 2px solid #1a1a1a;
   background-color: #ffffff;
   color: #1a1a1a;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-family: 'Inter', sans-serif;
+  display: inline-block;
 }
 
-.button:hover {
+.button-link:hover {
   background-color: #1a1a1a;
   color: #ffffff;
   transform: translateY(-3px);
@@ -100,6 +107,11 @@
   background-color: #1a1a1a;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   gap: 10px;
+}
+
+/* Moved the green color of the checkmark here */
+.success-icon {
+  fill: #48A860;
 }
 
 .home-text4 {
