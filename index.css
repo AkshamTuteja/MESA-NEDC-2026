@@ -93,22 +93,30 @@ body {
   box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 
-/* --- Floating Footer Badge --- */
-.home-container27 {
-  right: 40px;
-  bottom: 30px;
+/* Container to give the badge some breathing room from the edges */
+.translate-wrapper {
+  width: 100%;
+  padding: 20px 0 0 40px; /* Top and Left padding */
   display: flex;
-  position: fixed;
-  z-index: 22;
-  align-items: center;
-  padding: 12px 24px;
-  border-radius: 50px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  background-color: #1a1a1a;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  gap: 10px;
+  justify-content: flex-start;
+  background-color: #ffffff; /* Matches the main content background */
 }
 
+/* Your original floating badge style, now anchored */
+.translate-container {
+  display: inline-flex; /* Shrinks to fit content */
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  background-color: #1a1a1a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  gap: 10px;
+}
+/* Ensure the Google Translate dropdown looks clean */
+#google_translate_element {
+  display: inline-block;
+}
 /* Moved the green color of the checkmark here */
 .success-icon {
   fill: #48A860;

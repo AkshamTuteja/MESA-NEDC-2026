@@ -23,7 +23,7 @@ function checkEmailDomain() {
     // Split the string at the '@' and take the second part (the domain)
     const domain = email.split('@')[1];
     
-    // Check if the domain exists in our publicDomains array
+    // Check if the domain exists in the publicDomains array
     const isPublic = publicDomains.includes(domain);
 
     resultDiv.style.display = 'block';
