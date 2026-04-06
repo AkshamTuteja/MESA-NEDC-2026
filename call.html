@@ -3,62 +3,62 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Phone Call Safety - ElderGuard</title>
-    
+    <title>Phone Call - ElderGuard</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" />
     <link rel="stylesheet" href="./index.css" />
     <link rel="stylesheet" href="./call.css" />
 </head>
 <body>
-
     <header class="home-container10">
         <a href="index.html" class="home-container11" style="text-decoration: none;">
             <img src="assets/logo.svg" alt="Logo" class="home-logo" />
             <h1 class="home-text1">ElderGuard</h1>
         </a>
     </header>
-    <div class="translate-wrapper">
-      <div class="translate-container">
-        <div id="google_translate_element"></div>
-        <svg viewBox="0 0 24 24" class="success-icon" width="20" height="20">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"></path>
-        </svg>
-      </div>
-    </div>
-
 
     <main class="home-container12">
         <div class="container">
-            <h1 class="home-text2" style="font-size: 3rem;">Phone Call Guide</h1>
-            <p class="home-text3" style="font-size: 1.5rem;">In a suspicious call right now? Follow these steps:</p>
+            <h1 class="home-text2">Phone Call Guide</h1>
+            <p id="sub-text" class="home-text3">In a suspicious call right now? Answer the questions below:</p>
             
-            <div class="flex-row">
-                <section class="box warning-box">
-                    <h2>RED FLAGS</h2>
-                    <ul>
-                        <li>Unknown Number</li>
-                        <li>Demands or Threats</li>
-                        <li>Asking for Gift Cards</li>
-                        <li>Artificial/Robot Voice</li>
-                    </ul>
-                </section>
-
-                <section class="box action-box">
-                    <h2>WHAT TO DO</h2>
-                    <ul>
-                        <li>Stay Calm</li>
-                        <li>Hang up immediately</li>
-                        <li>Do not buy gift cards</li>
-                        <li>Call a trusted family member</li>
-                    </ul>
-                </section>
+            <div id="quiz-container" class="box interactive-box">
+                <p id="question-text">What is the caller asking for?</p>
+                <div id="answer-buttons" class="button-grid">
+                    <button class="button-link menu-btn" onclick="startBranch('money')">Money</button>
+                    <br><button class="button-link menu-btn" onclick="startBranch('info')">Personal Info</button>
+                    <br><button class="button-link menu-btn" onclick="startBranch('bank')">Bank Details</button>
+                    <br><button class="button-link menu-btn" onclick="startBranch('other')">Other</button>
+                </div>
             </div>
 
-            <br><br>
-            <a href="index.html" class="button-link" style="padding: 15px 40px; font-size: 1.2rem;">Back to Home</a>
+            <div id="static-info" style="display: none;">
+                <div class="flex-row">
+                    <section class="box warning-box">
+                        <h2>RED FLAGS</h2>
+                        <ul>
+                            <li>Unknown Number</li>
+                            <li>Demands, Threats, or Asking for Gift Cards</li>
+                            <li>Artificial/Robot Voice</li>
+                        </ul>
+                    </section>
+                    <section class="box action-box">
+                        <h2>WHAT TO DO</h2>
+                        <ul>
+                            <li>Stay Calm</li>
+                            <li>Hang up immediately</li>
+                            <li>Call a trusted family member</li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+
+            <div class="nav-stack">
+                <button id="toggle-static" class="button-link">See all red flags</button>
+                <a href="index.html" class="button-link">Back to Home</a>
+            </div>
         </div>
     </main>
-    <script src="translate.js"></script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script src="call.js"></script>
 </body>
 </html>

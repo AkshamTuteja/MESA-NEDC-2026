@@ -1,57 +1,73 @@
-/* --- Phone Call Guide Styles --- */
-
+/* --- Layout --- */
 .container { 
     max-width: 900px; 
     margin: 0 auto; 
-    text-align: center;
-    padding-bottom: 50px;
+    width: 100%;
 }
 
-/* Side-by-side layout */
-.flex-row {
+.nav-stack {
+    margin-top: 40px;
     display: flex;
-    gap: 25px;
-    text-align: left;
-    align-items: stretch;
-    margin-top: 30px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
+/* --- Interactive Box --- */
 .box {
-    flex: 1; 
-    padding: 30px;
+    padding: 40px;
     border-radius: 15px;
-    background: white;
-    border: 3px solid #1a1a1a; /* High contrast border */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    background: #ffffff;
+    border: 3px solid #1a1a1a;
+    margin-bottom: 30px;
 }
 
-/* Distinctive colored tops for quick visual cues */
-.warning-box { border-top: 12px solid #b91c1c; } /* Deep Red */
-.action-box { border-top: 12px solid #2D6A4F; }  /* ElderGuard Green */
+.interactive-box {
+    border-top: 12px solid #2D6A4F; /* Using your branding green */
+}
 
-.box h2 { 
-    font-size: 1.6rem; 
-    margin-top: 0; 
-    text-transform: uppercase; 
-    letter-spacing: 1px;
+#question-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 30px;
     color: #1a1a1a;
 }
 
-.box ul { 
-    padding-left: 20px; 
-    margin-bottom: 0; 
+/* --- Button Styling --- */
+.button-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
 }
 
-.box li { 
-    margin-bottom: 18px; 
-    font-size: 1.4rem; /* Senior-friendly font size */
-    font-weight: 500;
-    line-height: 1.4;
+/* Override button-link for specific interaction use */
+.menu-btn {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 20px 10px;
 }
 
-/* Stack boxes on mobile */
+.yes-btn { background-color: #2D6A4F; color: white; border-color: #2D6A4F; }
+.no-btn { background-color: #b91c1c; color: white; border-color: #b91c1c; }
+
+.secondary-link {
+    background: none;
+    border: none;
+    color: #4a4a4a;
+    text-decoration: underline;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* --- Static Section --- */
+.flex-row { display: flex; gap: 25px; margin-top: 20px; }
+.warning-box { border-top: 12px solid #b91c1c; text-align: left; }
+.action-box { border-top: 12px solid #2D6A4F; text-align: left; }
+
+.box h2 { font-size: 1.4rem; text-transform: uppercase; margin-bottom: 20px; }
+.box li { font-size: 1.2rem; margin-bottom: 10px; line-height: 1.4; }
+
 @media (max-width: 768px) {
-    .flex-row {
-        flex-direction: column;
-    }
+    .flex-row { flex-direction: column; }
+    .button-grid { grid-template-columns: 1fr; }
 }
